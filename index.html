@@ -25,7 +25,6 @@
     .btn:hover { background:var(--gold-light); transform:translateY(-1px); }
     .btn-outline { background:transparent; color:var(--gold-light); }
     .hero { min-height:600px; display:flex; align-items:center; position:relative; overflow:hidden; background:linear-gradient(90deg,rgba(9,10,12,.48),rgba(9,10,12,.12)); }
-    .hero:after { content:'SG'; position:absolute; right:7%; top:50%; transform:translateY(-50%); font-size:clamp(180px,32vw,420px); font-weight:900; letter-spacing:-25px; color:rgba(214,173,85,.055); pointer-events:none; }
     .hero-content { position:relative; z-index:1; max-width:690px; padding:88px 0; }
     .eyebrow { color:var(--gold-light); text-transform:uppercase; letter-spacing:3px; font-size:12px; font-weight:700; }
     h1 { font-size:clamp(42px,6vw,72px); line-height:1.07; margin:18px 0; letter-spacing:-2px; }
@@ -47,7 +46,6 @@
     .service-card p { color:var(--muted); font-size:14px; }
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
     .about-panel { border:1px solid #4a3b20; background:linear-gradient(140deg,rgba(33,27,16,.72),rgba(16,17,20,.72)); padding:35px; border-radius:10px; }
-    .about-panel .big { color:var(--gold); font-size:46px; font-weight:800; line-height:1; }
     .about-panel h3 { margin:14px 0 8px; font-size:24px; }
     .about-panel p, .about-copy p { color:var(--muted); margin-bottom:16px; }
     .about-copy h2 { font-size:clamp(30px,4vw,43px); line-height:1.15; margin:10px 0 18px; }
@@ -101,7 +99,7 @@
         <div class="eyebrow">Your trusted insurance brokerage</div>
         <h1>Your Protection.<br><span>Our Commitment.</span></h1>
         <p>Protect what matters most with insurance solutions tailored to you, your family, your vehicle, and your business.</p>
-        <div class="hero-actions"><a class="btn" href="#contact">Request a Quote&nbsp; ↗️</a><a class="btn btn-outline" href="#services">Explore Our Services</a></div>
+        <div class="hero-actions"><a class="btn" href="#contact">Request a Quote&nbsp; ↗</a><a class="btn btn-outline" href="#services">Explore Our Services</a></div>
         <div class="trust-row"><span><strong>✓</strong> Personal service</span><span><strong>✓</strong> Practical solutions</span><span><strong>✓</strong> Support when it matters</span></div>
       </div></div>
     </section>
@@ -113,10 +111,10 @@
           <article class="service-card"><div class="service-icon">🚘</div><h3>Motor Insurance</h3><p>Compulsory, third-party liability, and all-risk motor insurance options.</p></article>
           <article class="service-card"><div class="service-icon">🏠</div><h3>Property Insurance</h3><p>Cover options for homes, apartments, buildings, and personal belongings.</p></article>
           <article class="service-card"><div class="service-icon">🔥</div><h3>Fire & Theft</h3><p>Explore protection for eligible property and possessions against covered risks.</p></article>
-          <article class="service-card"><div class="service-icon">♥️</div><h3>Life & Personal Accident</h3><p>Insurance options designed to help protect you and your loved ones.</p></article>
+          <article class="service-card"><div class="service-icon">♥</div><h3>Life & Personal Accident</h3><p>Insurance options designed to help protect you and your loved ones.</p></article>
           <article class="service-card"><div class="service-icon">✚</div><h3>Medical Insurance</h3><p>Discuss available health coverage options for individuals and families.</p></article>
           <article class="service-card"><div class="service-icon">⚒</div><h3>Workmen’s Compensation</h3><p>Coverage options for employers and eligible workplace-related risks.</p></article>
-          <article class="service-card"><div class="service-icon">✈️</div><h3>Travel Insurance</h3><p>Travel protection options for eligible medical emergencies and disruptions.</p></article>
+          <article class="service-card"><div class="service-icon">✈</div><h3>Travel Insurance</h3><p>Travel protection options for eligible medical emergencies and disruptions.</p></article>
           <article class="service-card"><div class="service-icon">⚓</div><h3>Marine Insurance</h3><p>Insurance solutions for eligible cargo, transit, and marine-related exposures.</p></article>
           <article class="service-card"><div class="service-icon">▦</div><h3>Business Insurance</h3><p>Discuss insurance solutions for your company, operations, and assets.</p></article>
         </div>
@@ -125,7 +123,7 @@
 
     <section id="about">
       <div class="container about-grid">
-        <div class="about-panel"><div class="eyebrow">Shield Gate Insurance</div><div class="big">SG</div><h3>Protection with a personal touch.</h3><p>We help you explore insurance options with clear communication and service focused on your needs.</p><a class="btn btn-outline" href="#contact">Talk to Our Team</a></div>
+        <div class="about-panel"><div class="eyebrow">Shield Gate Insurance</div><h3>Protection with a personal touch.</h3><p>We help you explore insurance options with clear communication and service focused on your needs.</p><a class="btn btn-outline" href="#contact">Talk to Our Team</a></div>
         <div class="about-copy"><div class="eyebrow">About our brokerage</div><h2>Confidence starts with the <span class="gold">right protection.</span></h2><p>At Shield Gate Insurance, our goal is to make insurance easier to understand and simpler to arrange. We help clients explore suitable options and guide them through the quotation process.</p><p>Whether you need cover for your car, home, family, or business, contact us to discuss your requirements.</p><ul class="checks"><li>Friendly, personal assistance</li><li>Insurance options for individuals and businesses</li><li>Guidance through quotation requests</li><li>Local service from our Ghazir office</li></ul></div>
       </div>
     </section>
@@ -150,15 +148,15 @@
           <label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" />
           <label for="insurance">Insurance type *</label><select id="insurance" name="insurance" required><option value="">Choose a service</option><option>Motor Insurance</option><option>Property Insurance</option><option>Fire & Theft</option><option>Life Insurance</option><option>Personal Accident (PA)</option><option>Medical Insurance</option><option>Workmen’s Compensation</option><option>Travel Insurance</option><option>Marine Insurance</option><option>Business Insurance</option><option>Other</option></select>
           <label for="message">How can we help?</label><textarea id="message" name="message" placeholder="Tell us a little about the coverage you need..."></textarea>
-          <button class="btn" type="submit">Prepare Email Request&nbsp; ↗️</button>
+          <button class="btn" type="submit">Prepare Email Request&nbsp; ↗</button>
           <p class="form-note">This form opens your email app with your request. It does not submit information to a server.</p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer><div class="container footer-inner"><div><strong>SHIELD GATE INSURANCE</strong> — Your Protection. Our Commitment.</div><div>©️ <span id="year"></span> Shield Gate Insurance. All rights reserved.</div></div></footer>
-  <a class="whatsapp" href="https://wa.me/96170538865" target="_blank" rel="noopener" aria-label="Chat with Shield Gate Insurance on WhatsApp">WhatsApp ↗️</a>
+  <footer><div class="container footer-inner"><div><strong>SHIELD GATE INSURANCE</strong> — Your Protection. Our Commitment.</div><div>© <span id="year"></span> Shield Gate Insurance. All rights reserved.</div></div></footer>
+  <a class="whatsapp" href="https://wa.me/96170538865" target="_blank" rel="noopener" aria-label="Chat with Shield Gate Insurance on WhatsApp">WhatsApp ↗</a>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('quoteForm').addEventListener('submit', function(event) {
