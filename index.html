@@ -1,111 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Shield Gate Insurance helps individuals and businesses find thoughtful insurance coverage with independent guidance and personal service." />
-    <meta name="theme-color" content="#102a43" />
-    <title>Shield Gate Insurance | Coverage with confidence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#home" aria-label="Shield Gate Insurance home">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 40 44" fill="none"><path d="M20 2.5 36 8v12.1c0 10-6.8 17.2-16 21.4C10.8 37.3 4 30.1 4 20.1V8l16-5.5Z" stroke="currentColor" stroke-width="2.8"/><path d="m12.5 21.2 5 5 10-10" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span class="brand-name">SHIELD GATE<span>INSURANCE</span></span>
-        </a>
-        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
-        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-          <a href="#coverage">Coverage</a>
-          <a href="#about">About us</a>
-          <a href="#approach">Our approach</a>
-          <a class="nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shield Gate Insurance — trusted insurance brokerage in Ghazir, Lebanon. Your Protection. Our Commitment." />
+  <title>Shield Gate Insurance | Your Protection. Our Commitment.</title>
+  <style>
+    :root { --gold:#d6ad55; --gold-light:#f3d78e; --black:#090a0c; --panel:#14161a; --muted:#b9bbc1; --white:#fff; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:Arial, Helvetica, sans-serif; background:var(--black); color:var(--white); line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1120px, 92%); margin:auto; }
+    header { position:sticky; top:0; z-index:10; background:rgba(9,10,12,.94); border-bottom:1px solid #29251c; backdrop-filter:blur(10px); }
+    .nav { min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:1px; }
+    .brand-mark { width:43px; height:48px; display:grid; place-items:center; border:2px solid var(--gold); color:var(--gold); clip-path:polygon(50% 0, 95% 18%, 88% 70%, 50% 100%, 12% 70%, 5% 18%); font-size:23px; }
+    .brand-name { font-size:16px; line-height:1.15; }
+    .brand-name span { color:var(--gold); display:block; font-size:12px; letter-spacing:3px; margin-top:5px; }
+    nav { display:flex; gap:25px; align-items:center; }
+    nav a { color:#e8e8e8; font-size:14px; }
+    nav a:hover { color:var(--gold-light); }
+    .btn { display:inline-block; padding:12px 20px; border-radius:4px; background:var(--gold); color:#111; font-weight:700; border:1px solid var(--gold); transition:.2s; cursor:pointer; }
+    .btn:hover { background:var(--gold-light); transform:translateY(-1px); }
+    .btn-outline { background:transparent; color:var(--gold-light); }
+    .hero { min-height:600px; display:flex; align-items:center; position:relative; overflow:hidden; background:radial-gradient(ellipse at 78% 48%, #493718 0%, #17130c 24%, #090a0c 60%); }
+    .hero:after { content:'SG'; position:absolute; right:7%; top:50%; transform:translateY(-50%); font-size:clamp(180px,32vw,420px); font-weight:900; letter-spacing:-25px; color:rgba(214,173,85,.055); pointer-events:none; }
+    .hero-content { position:relative; z-index:1; max-width:690px; padding:88px 0; }
+    .eyebrow { color:var(--gold-light); text-transform:uppercase; letter-spacing:3px; font-size:12px; font-weight:700; }
+    h1 { font-size:clamp(42px,6vw,72px); line-height:1.07; margin:18px 0; letter-spacing:-2px; }
+    h1 span, .gold { color:var(--gold); }
+    .hero p { color:#d0d0d0; max-width:560px; font-size:18px; margin-bottom:30px; }
+    .hero-actions { display:flex; gap:13px; flex-wrap:wrap; }
+    .trust-row { display:flex; gap:28px; flex-wrap:wrap; margin-top:48px; color:#d4d4d4; font-size:13px; }
+    .trust-row strong { color:var(--gold-light); margin-right:6px; }
+    section { padding:82px 0; }
+    .section-head { max-width:680px; margin-bottom:36px; }
+    .section-head h2 { font-size:clamp(30px,4vw,44px); line-height:1.15; margin:10px 0 14px; }
+    .section-head p { color:var(--muted); }
+    .services { background:#0e0f12; }
+    .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .service-card { padding:25px; background:linear-gradient(145deg,#191b20,#111215); border:1px solid #292a2d; border-radius:8px; min-height:190px; transition:.2s; }
+    .service-card:hover { border-color:var(--gold); transform:translateY(-3px); }
+    .service-icon { width:43px; height:43px; border:1px solid #6f5a30; color:var(--gold-light); border-radius:7px; display:grid; place-items:center; font-size:21px; margin-bottom:17px; }
+    .service-card h3 { margin-bottom:8px; font-size:18px; }
+    .service-card p { color:var(--muted); font-size:14px; }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+    .about-panel { border:1px solid #4a3b20; background:linear-gradient(140deg,#211b10,#101114); padding:35px; border-radius:10px; }
+    .about-panel .big { color:var(--gold); font-size:46px; font-weight:800; line-height:1; }
+    .about-panel h3 { margin:14px 0 8px; font-size:24px; }
+    .about-panel p, .about-copy p { color:var(--muted); margin-bottom:16px; }
+    .about-copy h2 { font-size:clamp(30px,4vw,43px); line-height:1.15; margin:10px 0 18px; }
+    .checks { list-style:none; margin-top:20px; }
+    .checks li { margin:10px 0; color:#e4e4e4; }
+    .checks li:before { content:'✓'; color:var(--gold); font-weight:bold; margin-right:10px; }
+    .steps { background:#101114; }
+    .steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .step { border-top:2px solid var(--gold); padding:22px 20px; background:#17181c; }
+    .step-number { color:var(--gold); font-size:13px; letter-spacing:2px; font-weight:bold; }
+    .step h3 { margin:10px 0; }
+    .step p { color:var(--muted); font-size:14px; }
+    .contact { background:radial-gradient(ellipse at 90% 20%,#342815,#0b0c0e 55%); }
+    .contact-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:40px; }
+    .contact-info h2 { font-size:clamp(30px,4vw,44px); line-height:1.15; margin:10px 0 18px; }
+    .contact-info p { color:var(--muted); margin-bottom:25px; }
+    .contact-item { padding:15px 0; border-bottom:1px solid #34302a; }
+    .contact-item small { color:var(--gold-light); text-transform:uppercase; letter-spacing:1.5px; display:block; margin-bottom:4px; }
+    form { background:#151619; border:1px solid #34302a; border-radius:9px; padding:28px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    label { display:block; font-size:13px; color:#ddd; margin-bottom:6px; }
+    input, select, textarea { width:100%; background:#0c0d10; border:1px solid #3a3b3f; border-radius:4px; padding:12px; color:#fff; font:inherit; margin-bottom:15px; }
+    input:focus, select:focus, textarea:focus { outline:1px solid var(--gold); border-color:var(--gold); }
+    textarea { min-height:115px; resize:vertical; }
+    .form-note { color:#999; font-size:12px; margin-top:10px; }
+    footer { padding:27px 0; border-top:1px solid #29251c; color:#a9a9a9; font-size:13px; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .footer-inner strong { color:var(--gold-light); }
+    .whatsapp { position:fixed; right:20px; bottom:20px; z-index:20; background:#25d366; color:#062c13; border-radius:30px; padding:12px 17px; font-weight:800; box-shadow:0 6px 25px #0008; }
+    @media(max-width:800px) { nav { gap:12px; } nav a:not(.nav-cta) { display:none; } .hero { min-height:550px; } .service-grid { grid-template-columns:repeat(2,1fr); } .about-grid,.contact-grid { grid-template-columns:1fr; gap:28px; } .steps-grid { grid-template-columns:1fr; } }
+    @media(max-width:520px) { .nav { min-height:70px; } .brand-name { font-size:13px; } .brand-mark { width:37px; height:42px; } .nav-cta { padding:9px 12px; font-size:12px; } .service-grid { grid-template-columns:1fr; } section { padding:62px 0; } .form-row { grid-template-columns:1fr; gap:0; } .trust-row { gap:13px; } .hero p { font-size:16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Shield Gate Insurance home">
+        <span class="brand-mark">↗</span>
+        <span class="brand-name">SHIELD GATE<span>INSURANCE</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About Us</a><a href="#contact">Contact</a>
+        <a class="btn nav-cta" href="#contact">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container"><div class="hero-content">
+        <div class="eyebrow">Your trusted insurance brokerage</div>
+        <h1>Your Protection.<br><span>Our Commitment.</span></h1>
+        <p>Protect what matters most with insurance solutions tailored to you, your family, your vehicle, and your business.</p>
+        <div class="hero-actions"><a class="btn" href="#contact">Request a Quote&nbsp; ↗</a><a class="btn btn-outline" href="#services">Explore Our Services</a></div>
+        <div class="trust-row"><span><strong>✓</strong> Personal service</span><span><strong>✓</strong> Practical solutions</span><span><strong>✓</strong> Support when it matters</span></div>
+      </div></div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Our insurance solutions</div><h2>Coverage for every <span class="gold">part of life.</span></h2><p>Explore our range of insurance products. Contact us to discuss the coverage, limits, and terms that fit your needs.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-icon">🚘</div><h3>Motor Insurance</h3><p>Compulsory, third-party liability, and all-risk motor insurance options.</p></article>
+          <article class="service-card"><div class="service-icon">🏠</div><h3>Property Insurance</h3><p>Cover options for homes, apartments, buildings, and personal belongings.</p></article>
+          <article class="service-card"><div class="service-icon">🔥</div><h3>Fire & Theft</h3><p>Explore protection for eligible property and possessions against covered risks.</p></article>
+          <article class="service-card"><div class="service-icon">♥</div><h3>Life & Personal Accident</h3><p>Insurance options designed to help protect you and your loved ones.</p></article>
+          <article class="service-card"><div class="service-icon">✚</div><h3>Medical Insurance</h3><p>Discuss available health coverage options for individuals and families.</p></article>
+          <article class="service-card"><div class="service-icon">⚒</div><h3>Workmen’s Compensation</h3><p>Coverage options for employers and eligible workplace-related risks.</p></article>
+          <article class="service-card"><div class="service-icon">✈</div><h3>Travel Insurance</h3><p>Travel protection options for eligible medical emergencies and disruptions.</p></article>
+          <article class="service-card"><div class="service-icon">⚓</div><h3>Marine Insurance</h3><p>Insurance solutions for eligible cargo, transit, and marine-related exposures.</p></article>
+          <article class="service-card"><div class="service-icon">▦</div><h3>Business Insurance</h3><p>Discuss insurance solutions for your company, operations, and assets.</p></article>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="hero" id="home">
-        <div class="hero-shape hero-shape-one"></div>
-        <div class="hero-shape hero-shape-two"></div>
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <div class="eyebrow"><span class="eyebrow-line"></span> INDEPENDENT INSURANCE BROKERS</div>
-            <h1>Protection for<br />what matters <span>most.</span></h1>
-            <p class="hero-description">Life moves forward. We help you protect the people, plans, and possibilities that move with it.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Get a coverage review <span aria-hidden="true">↗</span></a>
-              <a class="text-link" href="#coverage">Explore coverage <span aria-hidden="true">↓</span></a>
-            </div>
-            <div class="hero-note"><span class="note-check" aria-hidden="true">✓</span> Independent advice. Personal service. Coverage that fits.</div>
-          </div>
-          <div class="hero-art" aria-label="Illustration of a protected home and family">
-            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-            <div class="art-sun"></div>
-            <div class="art-house">
-              <div class="house-roof"></div>
-              <div class="house-body"><div class="house-window window-left"></div><div class="house-door"></div><div class="house-window window-right"></div></div>
-              <div class="house-ground"></div>
-            </div>
-            <div class="art-shield"><svg viewBox="0 0 80 88" fill="none"><path d="M40 5 70 15v23c0 19-12.7 32.8-30 41-17.3-8.2-30-22-30-41V15L40 5Z" fill="#fff"/><path d="m27 42 9 9 18-19" stroke="#247c78" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="art-label"><span class="label-dot"></span> Here for your next chapter</div>
-            <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✳</span>
-          </div>
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-panel"><div class="eyebrow">Shield Gate Insurance</div><div class="big">SG</div><h3>Protection with a personal touch.</h3><p>We help you explore insurance options with clear communication and service focused on your needs.</p><a class="btn btn-outline" href="#contact">Talk to Our Team</a></div>
+        <div class="about-copy"><div class="eyebrow">About our brokerage</div><h2>Confidence starts with the <span class="gold">right protection.</span></h2><p>At Shield Gate Insurance, our goal is to make insurance easier to understand and simpler to arrange. We help clients explore suitable options and guide them through the quotation process.</p><p>Whether you need cover for your car, home, family, or business, contact us to discuss your requirements.</p><ul class="checks"><li>Friendly, personal assistance</li><li>Insurance options for individuals and businesses</li><li>Guidance through quotation requests</li><li>Local service from our Ghazir office</li></ul></div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="container"><div class="section-head"><div class="eyebrow">Simple process</div><h2>Get covered in <span class="gold">three steps.</span></h2><p>Start a conversation with our team and we’ll help you understand the next steps.</p></div>
+        <div class="steps-grid"><article class="step"><div class="step-number">STEP 01</div><h3>Tell us what you need</h3><p>Share the type of insurance and the basic details of the risk you want to cover.</p></article><article class="step"><div class="step-number">STEP 02</div><h3>Review your options</h3><p>We’ll help you request and review suitable quotations and coverage details.</p></article><article class="step"><div class="step-number">STEP 03</div><h3>Choose with confidence</h3><p>Review the policy terms, exclusions, limits, and premium before making a decision.</p></article></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info"><div class="eyebrow">Contact us</div><h2>Let’s find the right <span class="gold">protection.</span></h2><p>Contact Shield Gate Insurance for a quotation or to ask about our insurance services.</p>
+          <div class="contact-item"><small>Call us</small><a href="tel:+96170538865">70 538 865</a></div>
+          <div class="contact-item"><small>Visit our office</small>Ghazir Al Saha, facing Bank of Beirut, Lebanon</div>
+          <div class="contact-item"><small>Email</small><a href="mailto:Anthonydebs1993@hotmail.com">Anthonydebs1993@hotmail.com</a></div>
+          <div class="contact-item"><small>Founder & CEO</small>Anthony A. Debs</div>
         </div>
-        <div class="container hero-foot"><span>GOOD COVERAGE STARTS WITH A GOOD CONVERSATION.</span><span class="hero-foot-rule"></span><span>YOUR PARTNER IN PROTECTION</span></div>
-      </section>
+        <form id="quoteForm">
+          <h3 style="font-size:23px;margin-bottom:5px">Request a quotation</h3><p style="color:#aaa;font-size:14px;margin-bottom:22px">Complete the form and send your request by email.</p>
+          <div class="form-row"><div><label for="name">Full name *</label><input id="name" name="name" required placeholder="Your full name" /></div><div><label for="phone">Phone number *</label><input id="phone" name="phone" required type="tel" placeholder="Your phone number" /></div></div>
+          <label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" />
+          <label for="insurance">Insurance type *</label><select id="insurance" name="insurance" required><option value="">Choose a service</option><option>Motor Insurance</option><option>Property Insurance</option><option>Fire & Theft</option><option>Life Insurance</option><option>Personal Accident (PA)</option><option>Medical Insurance</option><option>Workmen’s Compensation</option><option>Travel Insurance</option><option>Marine Insurance</option><option>Business Insurance</option><option>Other</option></select>
+          <label for="message">How can we help?</label><textarea id="message" name="message" placeholder="Tell us a little about the coverage you need..."></textarea>
+          <button class="btn" type="submit">Prepare Email Request&nbsp; ↗</button>
+          <p class="form-note">This form opens your email app with your request. It does not submit information to a server.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-      <section class="trust-strip" aria-label="Our promise">
-        <div class="container trust-inner">
-          <div class="trust-intro">A steadier way<br />to feel protected.</div>
-          <div class="trust-item"><span class="trust-icon">⌕</span><div><strong>Independent choice</strong><span>Options from multiple carriers</span></div></div>
-          <div class="trust-item"><span class="trust-icon">♡</span><div><strong>People-first service</strong><span>Real guidance, when you need it</span></div></div>
-          <div class="trust-item"><span class="trust-icon">↗</span><div><strong>Made to fit</strong><span>Coverage shaped around you</span></div></div>
-        </div>
-      </section>
-
-      <section class="coverage section-pad" id="coverage">
-        <div class="container">
-          <div class="section-heading">
-            <div><div class="eyebrow"><span class="eyebrow-line"></span> COVERAGE THAT WORKS FOR YOU</div><h2>One good decision.<br /><span>More peace of mind.</span></h2></div>
-            <p>Whether you're building a business, buying a home, or planning for what's next, we'll help you find the right protection.</p>
-          </div>
-          <div class="coverage-grid">
-            <article class="coverage-card"><div class="card-icon icon-home"><svg viewBox="0 0 32 32" fill="none"><path d="m4 14 12-10 12 10v14H4V14Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 28V18h8v10M4 14h24" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><h3>Home & property</h3><p>Help protect the place you call home and the things that make it yours.</p><a href="#contact">Explore home coverage <span>↗</span></a></article>
-            <article class="coverage-card"><div class="card-icon icon-auto"><svg viewBox="0 0 32 32" fill="none"><path d="m6 18 2.5-7A3 3 0 0 1 11.3 9h9.4a3 3 0 0 1 2.8 2l2.5 7v8H6v-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 19h20M10 23h.1M22 23h.1M9 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="m11 9 1-4h8l1 4" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><h3>Auto</h3><p>Confidence for the everyday drive, the family road trip, and everything between.</p><a href="#contact">Explore auto coverage <span>↗</span></a></article>
-            <article class="coverage-card"><div class="card-icon icon-business"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M11 10V6h10v4M4 17h24M13 17v3h6v-3" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><h3>Business</h3><p>Thoughtful protection to help your business keep moving with confidence.</p><a href="#contact">Explore business coverage <span>↗</span></a></article>
-            <article class="coverage-card"><div class="card-icon icon-life"><svg viewBox="0 0 32 32" fill="none"><path d="M16 27s-11-6.3-11-14a6 6 0 0 1 11-3.2A6 6 0 0 1 27 13c0 7.7-11 14-11 14Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 16h4l2-4 2 8 2-4h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Life & family</h3><p>Plan for the people you love with protection that supports their future.</p><a href="#contact">Explore life coverage <span>↗</span></a></article>
-          </div>
-          <p class="coverage-disclaimer">Coverage availability, terms, and conditions vary. We'll help you understand your options.</p>
-        </div>
-      </section>
-
-      <section class="about-section" id="about">
-        <div class="container about-grid">
-          <div class="about-visual"><div class="about-visual-bg"></div><div class="about-quote-mark">“</div><blockquote>Good insurance isn't just a policy. It's knowing someone has your back.</blockquote><div class="quote-attribution"><span class="attribution-line"></span> THE SHIELD GATE PROMISE</div><div class="about-stamp"><span>HERE FOR<br />WHAT'S NEXT</span><span class="stamp-star">✳</span></div></div>
-          <div class="about-copy"><div class="eyebrow"><span class="eyebrow-line"></span> YOUR PARTNER, NOT JUST YOUR BROKER</div><h2>Big-picture thinking.<br /><span>Personal attention.</span></h2><p>Insurance can feel complicated. We make it feel more human. As an independent brokerage, we take time to understand your priorities, explain your options, and help you make an informed choice.</p><p>And as life changes, we're here to help you revisit your coverage—so it can keep up with you.</p><a class="button button-dark" href="#contact">Get to know us <span aria-hidden="true">↗</span></a></div>
-        </div>
-      </section>
-
-      <section class="approach section-pad" id="approach">
-        <div class="container">
-          <div class="approach-heading"><div class="eyebrow"><span class="eyebrow-line"></span> SIMPLE, SUPPORTIVE, STRAIGHTFORWARD</div><h2>Clarity at every step.</h2><p>No pressure. No unnecessary jargon. Just a thoughtful process that starts with you.</p></div>
-          <div class="steps-grid"><article class="step"><div class="step-number">01</div><h3>We listen</h3><p>Tell us what matters, what you're protecting, and where you'd like a little more certainty.</p></article><article class="step"><div class="step-number">02</div><h3>We compare</h3><p>We explore options from our carrier partners and explain the differences in plain language.</p></article><article class="step"><div class="step-number">03</div><h3>We stay with you</h3><p>Once you've chosen a path, we're here for questions, changes, and the moments that matter.</p></article></div>
-        </div>
-      </section>
-
-      <section class="contact-section" id="contact">
-        <div class="container contact-inner"><div class="contact-copy"><div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> LET'S START A CONVERSATION</div><h2>A little more peace<br />of mind starts here.</h2><p>Tell us what you'd like to protect. We'll help you figure out a good next step—no pressure, just a real conversation.</p><a class="button button-light" href="mailto:hello@shieldgateinsurance.com?subject=Coverage%20inquiry">Email our team <span aria-hidden="true">↗</span></a></div><div class="contact-side"><div class="contact-emblem"><svg viewBox="0 0 80 88" fill="none"><path d="M40 5 70 15v23c0 19-12.7 32.8-30 41-17.3-8.2-30-22-30-41V15L40 5Z" stroke="currentColor" stroke-width="2.4"/><path d="m27 42 9 9 18-19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="contact-side-title">SHIELD GATE INSURANCE</span><span class="contact-side-subtitle">Here for what matters.</span><a class="contact-email" href="mailto:hello@shieldgateinsurance.com">hello@shieldgateinsurance.com</a><span class="contact-note">Add your phone number and office hours here.</span></div></div>
-      </section>
-    </main>
-
-    <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 44" fill="none"><path d="M20 2.5 36 8v12.1c0 10-6.8 17.2-16 21.4C10.8 37.3 4 30.1 4 20.1V8l16-5.5Z" stroke="currentColor" stroke-width="2.8"/><path d="m12.5 21.2 5 5 10-10" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="brand-name">SHIELD GATE<span>INSURANCE</span></span></a><div class="footer-links"><a href="#coverage">Coverage</a><a href="#about">About</a><a href="#approach">Our approach</a><a href="#contact">Contact</a></div><a class="back-top" href="#home">Back to top ↑</a></div><div class="container footer-bottom"><span>© <span id="year"></span> Shield Gate Insurance. All rights reserved.</span><span>Coverage terms and availability vary by carrier and state. This website is for general information only.</span></div></footer>
-  </body>
+  <footer><div class="container footer-inner"><div><strong>SHIELD GATE INSURANCE</strong> — Your Protection. Our Commitment.</div><div>© <span id="year"></span> Shield Gate Insurance. All rights reserved.</div></div></footer>
+  <a class="whatsapp" href="https://wa.me/96170538865" target="_blank" rel="noopener" aria-label="Chat with Shield Gate Insurance on WhatsApp">WhatsApp ↗</a>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('quoteForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const data = new FormData(this);
+      const subject = encodeURIComponent('Insurance quotation request — Shield Gate Insurance');
+      const body = encodeURIComponent(
+        'Name: ' + data.get('name') + '\n' +
+        'Phone: ' + data.get('phone') + '\n' +
+        'Email: ' + (data.get('email') || 'Not provided') + '\n' +
+        'Insurance type: ' + data.get('insurance') + '\n\n' +
+        'Message: ' + (data.get('message') || 'No additional message')
+      );
+      window.location.href = 'mailto:Anthonydebs1993@hotmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
 </html>
